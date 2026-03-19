@@ -3,57 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para alguien especial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Feliz Cumpleaños</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); color: #eee; font-family: 'Poppins', sans-serif; display: flex; justify-content: center; min-height: 100vh; text-align: center; }
-        .main-container { max-width: 600px; padding: 50px 30px; background: rgba(0, 0, 0, 0.6); margin: 40px 20px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .rose { font-size: 60px; filter: grayscale(1) brightness(0.7); margin-bottom: 20px; display: block; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #fff; margin-bottom: 30px; }
-        .text-body { text-align: left; line-height: 1.8; color: #ccc; font-size: 1.05rem; white-space: pre-line; }
-        .poem-section { font-style: italic; color: #999; margin: 30px 0; padding-left: 15px; border-left: 1px solid #444; }
-        .gift-section { margin-top: 40px; }
-        .arrow { font-size: 20px; animation: bounce 1.5s infinite; color: #666; margin-bottom: 10px; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .gift-box { font-size: 70px; cursor: pointer; display: inline-block; animation: pulse 2s infinite ease-in-out; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
-        .secret-msg { display: none; margin-top: 20px; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 15px; color: #f1c40f; font-weight: 500; border: 1px dashed #f1c40f; animation: fadeIn 1s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body {
+            margin: 0;
+            padding: 0;
+            /* CAMBIO: Fondo Azul Medianoche degradado */
+            background: linear-gradient(135deg, #050510 0%, #101030 100%);
+            color: #eee;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            max-width: 700px;
+            padding: 60px 40px;
+            background: rgba(0, 0, 0, 0.7); /* Fondo contenedor un poco más opaco */
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CAMBIO: Rosa Negra más GRANDE (font-size aumentado) */
+        .rose-icon {
+            font-size: 110px; /* Estaba en 70px */
+            color: #000;
+            text-shadow: 0 0 20px rgba(255,255,255,0.2);
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #ffffff, #aaaaaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .message {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .poem {
+            font-style: italic;
+            color: #aaa;
+            border-left: 2px solid #444;
+            padding-left: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        /* Sección del Regalo Animado */
+        .gift-container {
+            margin-top: 50px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gift-box {
+            font-size: 80px;
+            color: #f1c40f; /* Color dorado */
+            animation: giftHeartbeat 2.5s infinite ease-in-out;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes giftHeartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.1); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .arrow {
+            font-size: 25px;
+            color: #888;
+            margin-bottom: 5px;
+            animation: arrowBounce 1.5s infinite;
+        }
+
+        @keyframes arrowBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .secret-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #f1c40f; /* Color dorado */
+            font-weight: 500;
+            background: rgba(241, 196, 15, 0.1);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(241, 196, 15, 0.2);
+            animation: fadeIn 0.8s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <span class="rose">🌹</span>
-        <h1>¡Feliz Cumpleaños!</h1>
-        <div class="text-body">
-            Hola, ¿cómo estás?
-            Espero que estés bien... bueno, seguro que estás bien, porque a pesar de que tengas momentos o recuerdos malos, sé que tienes la valentía y la fuerza para seguir adelante.
-            Los cumpleaños son días especiales; cerramos un capítulo de nuestra vida y abrimos otro. No importa la cantidad de los cumpleaños, sino la calidad con la que los vivimos.
-            Te conocí por casualidad, te hablé por educación y, de un día para otro, terminaste en mi corazón. Todo lo bonito cumple años en marzo; lo sabe el mundo y lo sé yo.
-            Y aunque esté lejos, no puedo evitar sonreír. Si estuvieras frente a mí, notarías esta alegría media tonta que me nace de solo escribirte esto.
-            Hay muchos momentos hermosos en la vida, pero sin duda el mejor de ellos fue haberte conocido. Gracias por los momentos que compartimos. Espero que hoy la pases bonito.
 
-            <div class="poem-section">
-                "Que las velas sean infinitas y el pastel, tu favorito.
-                Que cada vez que mires el reloj, tu sonrisa ilumine el momento, disfrutando de cada segundo de tu día.
-                Desde la distancia y el silencio, que mis abrazos te lleguen con el viento.
-                No pretendo romper la línea frágil que nos separa; no por ti, no por mí.
-                Pero con todas mis fuerzas, te envío el regalo más preciado de mi ser.
-                Le hablaré al Universo, suplicando que te concedan lo más hermoso que hoy podría desear para ti.
-                Que si alguna vez paso por tu mente, sea un recuerdo efímero, fugaz y delicado, como el cálido resplandor de tus ojos.
-                Y si pasas por la mía, lo guardaré en el cajón de los recuerdos, mientras una lágrima solitaria se convierte en un deseo profundo y sincero de que la vida te envíe... lo más preciado."
+    <div class="main-container">
+        <div class="rose-icon">🌹</div>
+        
+        <h1>¡Feliz Cumpleaños!</h1>
+        
+        <div class="message">
+            <p>Hola, ¿cómo estás?</p>
+            <p>Espero que estés bien... bueno, seguro que estás bien, porque a pesar de que tengas momentos o recuerdos malos, sé que tienes la valentía y la fuerza para seguir adelante.</p>
+            <p>Los cumpleaños son días especiales; cerramos un capítulo de nuestra vida y abrimos otro. No importa la cantidad de los cumpleaños, sino la calidad con la que los vivimos.</p>
+            <p>Te conocí por casualidad, te hablé por educación y, de un día para otro, terminaste en mi corazón. Todo lo bonito cumple años en marzo; lo sabe el mundo y lo sé yo.</p>
+            <p>Y aunque esté lejos, no puedo evitar sonreír. Si estuvieras frente a mí, notarías esta alegría media tonta que me nace de solo escribirte esto.</p>
+            <p>Hay muchos momentos hermosos en la vida, pero sin duda el mejor de ellos fue haberte conocido. Gracias por los momentos que compartimos. Espero que hoy la pases bonito.</p>
+        </div>
+
+        <div class="poem">
+            <p>"Que las velas sean infinitas y el pastel, tu favorito.<br>
+            Que cada vez que mires el reloj, tu sonrisa ilumine el momento, disfrutando de cada segundo de tu día.</p>
+            
+            <p>Desde la distancia y el silencio, que mis abrazos te lleguen con el viento.<br>
+            No pretendo romper la línea frágil que nos separa; no por ti, no por mí.</p>
+            
+            <p>Pero con todas mis fuerzas, te envío el regalo más preciado de mi ser.<br>
+            Le hablaré al Universo, suplicando que te concedan lo más hermoso que hoy podría desear para ti.</p>
+            
+            <p>Que si alguna vez paso por tu mente, sea un recuerdo efímero, fugaz y delicado, como el cálido resplandor de tus ojos.<br>
+            Y si pasas por la mía, lo guardaré en el cajón de los recuerdos, mientras una lágrima solitaria se convierte en un deseo profundo y sincero de que la vida te envíe... lo más preciado."</p>
+        </div>
+
+        <div class="gift-container">
+            <div class="arrow">⬇️</div>
+            <div class="gift-box" onclick="abrirRegalo()">🎁</div>
+            <p style="color: #888; font-size: 0.9rem; margin-top: 5px;">(Haz clic para abrir)</p>
+            
+            <div class="secret-message" id="secret-message">
+                Te devo un regalo... espero poder cómpralo juntos.
             </div>
         </div>
-        <div class="gift-section">
-            <div class="arrow">↓</div>
-            <div class="gift-box" onclick="showMsg()">🎁</div>
-            <div id="msg" class="secret-msg">te devo un regalo espero poder cómpralo juntos</div>
-        </div>
     </div>
+
     <script>
-        function showMsg() {
-            document.getElementById('msg').style.display = 'block';
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        function abrirRegalo() {
+            var message = document.getElementById('secret-message');
+            // Muestra el mensaje con un efecto de fadeIn
+            message.style.display = 'block';
+            // Desplázate suavemente hacia el mensaje
+            message.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>
 </body>
