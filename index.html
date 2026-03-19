@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Cumpleaños</title>
+    <title>Para alguien especial</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            /* CAMBIO: Fondo Azul Medianoche degradado */
-            background: linear-gradient(135deg, #050510 0%, #101030 100%);
+            /* CAMBIO: Fondo Azul Medianoche degradado (Asegurado) */
+            background: linear-gradient(135deg, #050515 0%, #101035 100%) !important;
             color: #eee;
             font-family: 'Poppins', sans-serif;
             display: flex;
@@ -24,7 +24,7 @@
         .main-container {
             max-width: 700px;
             padding: 60px 40px;
-            background: rgba(0, 0, 0, 0.7); /* Fondo contenedor un poco más opaco */
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 25px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.6);
             border: 1px solid rgba(255, 255, 255, 0.03);
@@ -32,13 +32,15 @@
             z-index: 2;
         }
 
-        /* CAMBIO: Rosa Negra más GRANDE (font-size aumentado) */
+        /* CAMBIO: Rosa Negra (usando filtro para oscurecerla y hacerla negra) */
         .rose-icon {
-            font-size: 110px; /* Estaba en 70px */
+            font-size: 110px;
             color: #000;
-            text-shadow: 0 0 20px rgba(255,255,255,0.2);
+            text-shadow: 0 0 15px rgba(255,255,255,0.2);
             margin-bottom: 30px;
             display: inline-block;
+            /* Aplicamos filtro para que parezca una rosa negra */
+            filter: grayscale(1) brightness(0.2); 
         }
 
         h1 {
@@ -100,7 +102,7 @@
         .arrow {
             font-size: 25px;
             color: #888;
-            margin-bottom: 5px;
+            margin-bottom: 15px; /* Más espacio */
             animation: arrowBounce 1.5s infinite;
         }
 
@@ -163,10 +165,9 @@
         <div class="gift-container">
             <div class="arrow">⬇️</div>
             <div class="gift-box" onclick="abrirRegalo()">🎁</div>
-            <p style="color: #888; font-size: 0.9rem; margin-top: 5px;">(Haz clic para abrir)</p>
             
             <div class="secret-message" id="secret-message">
-                Te devo un regalo... espero poder cómpralo juntos.
+                Te debo un regalo... espero poder comprarlo juntos.
             </div>
         </div>
     </div>
@@ -174,7 +175,7 @@
     <script>
         function abrirRegalo() {
             var message = document.getElementById('secret-message');
-            // Muestra el mensaje con un efecto de fadeIn
+            // Muestra el mensaje
             message.style.display = 'block';
             // Desplázate suavemente hacia el mensaje
             message.scrollIntoView({ behavior: 'smooth', block: 'center' });
